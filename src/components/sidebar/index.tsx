@@ -83,8 +83,13 @@ const links: LinkProps[] = [
   },
 ];
 
-export function Sidebar() {
-  const [collapsed, setCollapsed] = useState(false);
+export function Sidebar({
+  collapsed,
+  setCollapsed,
+}: {
+  collapsed: boolean;
+  setCollapsed: (v: boolean) => void;
+}) {
   return (
     <Box
       as="aside"

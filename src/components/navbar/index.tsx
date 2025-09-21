@@ -18,7 +18,7 @@ import { IoCaretDown } from "react-icons/io5";
 import { IoLink } from "react-icons/io5";
 import CustomButton from "../ui/Button";
 
-export function Navbar() {
+export function Navbar({ collapsed }: { collapsed: boolean }) {
   return (
     <Flex
       as="header"
@@ -31,9 +31,10 @@ export function Navbar() {
       borderBottomWidth={1}
       position="fixed"
       top={0}
-      left={{ base: "60px", md: "250px" }}
+      left={collapsed ? "60px" : { base: "60px", md: "250px" }}
       right={0}
       zIndex={1000}
+      transition="left 0.3s ease"
     >
       <Box w={60}>
         <CustomInput
